@@ -70,6 +70,7 @@ class TestClient(HTTPClientMixin):
         self._update_cookies(response.headers)
         return response
 
+
     def _update_cookies(self, headers):
         try:
             sc = headers['Set-Cookie']
