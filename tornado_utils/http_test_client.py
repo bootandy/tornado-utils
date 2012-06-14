@@ -70,7 +70,6 @@ class TestClient(HTTPClientMixin):
         self._update_cookies(response.headers)
         return response
 
-
     def _update_cookies(self, headers):
         try:
             sc = headers['Set-Cookie']
@@ -78,8 +77,8 @@ class TestClient(HTTPClientMixin):
             while True:
                 self.cookies.update(Cookie.SimpleCookie(cookies))
                 if cookies.find(',') == -1:
-                    break;
-                cookies = cookies[cookies.find(',') + len(',') :]
+                    break
+                cookies = cookies[cookies.find(',') + len(','):]
         except KeyError:
             return
 
